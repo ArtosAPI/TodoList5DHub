@@ -1,0 +1,136 @@
+.light-theme {
+	--background-color: white;
+	--text-color: black;
+	--border-color: black;
+	--task-bg-color: rgb(87, 87, 87);
+}
+
+.dark-theme {
+	--background-color: black;
+	--text-color: white;
+	--border-color: white;
+	--task-bg-color: rgb(179, 179, 179);
+}
+
+.todo-container {
+	width: 90%;
+	max-width: 500px;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	background: var(--background-color);
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+	.todo-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1.5rem;
+
+		h1 {
+			margin: 0;
+			color: var(--text-color);
+		}
+	}
+
+	.input-section {
+		display: flex;
+		gap: 10px;
+		margin-bottom: 1.5rem;
+
+		.task-input {
+			flex: 1;
+			padding: 10px;
+			border: 1px solid var(--border-color);
+			border-radius: 5px;
+			font-size: 16px;
+
+			&:focus {
+				outline: none;
+				border-color: #4caf50;
+			}
+		}
+
+		.add-button {
+			padding: 10px 20px;
+			background-color: #4caf50;
+			color: var(--text-color);
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+
+			&:hover {
+				background-color: #45a049;
+			}
+		}
+	}
+
+	.tasks-list {
+		min-height: 200px;
+		border: 1px dashed var(--border-color);
+		border-radius: 5px;
+		padding: 1rem;
+
+		.task-container {
+			display: flex;
+			justify-content: end;
+			align-items: center;
+			position: relative;
+
+			height: 50px;
+			width: 100%;
+			background-color: var(--task-bg-color);
+
+			.task-container-checkbox {
+				position: absolute;
+				left: 50%; /* Center horizontally */
+				transform: translateX(-50%);
+
+				height: 25px;
+				display: flex;
+				align-items: center;
+				color: var(--text-color);
+
+				input {
+					height: 25px;
+
+					.checkbox-active {
+						text-decoration: line-through;
+					}
+
+					.checkbox-inactive {
+						text-decoration: none;
+					}
+				}
+
+				label {
+					height: 25px;
+				}
+			}
+
+			.task-container-deletebtn {
+				background-color: transparent;
+				border-radius: 100%;
+				border: none;
+				padding: 0px;
+				margin-right: 25px;
+				font-size: 30px;
+				color: var(--text-color);
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				line-height: 25px;
+				height: 37.5px;
+				width: 37.5px;
+
+				transition: 500ms;
+			}
+
+			.task-container-deletebtn:hover {
+				background-color: rgba(255, 0, 0, 0.26);
+			}
+		}
+	}
+}
